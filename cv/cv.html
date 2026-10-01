@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>John Kent Blancaflor — CV</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  .page { padding: 34px 38px 30px; }
+
+  /* ── Header ─────────────────────────────── */
+  header { border-bottom: 1.5px solid #000; padding-bottom: 12px; margin-bottom: 15px; }
+  h1 {
+    margin: 0 0 3px;
+    font-size: 21pt;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .tagline { margin: 0 0 9px; font-size: 10pt; color: #333; font-weight: 600; }
+  .contact { font-size: 8.6pt; color: #444; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .contact span { white-space: nowrap; }
+  .contact a { color: #444; text-decoration: none; }
+
+  /* ── Section headers ────────────────────── */
+  h2 {
+    font-size: 8.4pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #666;
+    margin: 15px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* ── Summary ────────────────────────────── */
+  p.summary { margin: 0; font-size: 9.8pt; color: #222; }
+
+  /* ── Entries ────────────────────────────── */
+  .entry { margin-bottom: 11px; page-break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .title { font-weight: 700; font-size: 10.4pt; }
+  .meta { font-size: 8.6pt; color: #555; white-space: nowrap; font-style: italic; }
+  .sub { font-size: 8.8pt; color: #555; margin-bottom: 3px; }
+  .sub a { color: #555; text-decoration: none; }
+  ul { margin: 4px 0 0; padding-left: 15px; }
+  li { margin-bottom: 2.5px; font-size: 9.6pt; }
+
+  /* ── Skills ─────────────────────────────── */
+  .skill-group { margin-bottom: 7px; font-size: 9.6pt; }
+  .skill-label { font-weight: 700; }
+  .skill-list { color: #333; }
+
+  /* ── Two-column helper ──────────────────── */
+  .cols { display: flex; gap: 22px; }
+  .col { flex: 1; }
+
+  /* ── Footer note ────────────────────────── */
+  .note {
+    margin-top: 15px; padding-top: 8px; border-top: 1px solid #eee;
+    font-size: 8pt; color: #777;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>John Kent Blancaflor</h1>
+    <p class="tagline">Full-Stack Web Developer — BSIT Student</p>
+    <div class="contact">
+      <span>Tabaco City, Albay, Philippines</span>
+      <span>+63 991 815 4335</span>
+      <span><a href="mailto:johnkenttblancaflor@gmail.com">johnkenttblancaflor@gmail.com</a></span>
+      <span><a href="https://github.com/yobb-bit">github.com/yobb-bit</a></span>
+    </div>
+  </header>
+
+  <h2>01 — Summary</h2>
+  <p class="summary">
+    Second-year BSIT student building web applications with React, Next.js, and TypeScript.
+    Self-taught through building — ships deployed, working products including a PWA ticketing
+    system and a marketplace platform, both backed by Supabase with Row Level Security.
+    Brings hands-on experience in customer operations and supplier coordination, with a
+    strong work ethic and reliable availability.
+  </p>
+
+  <h2>02 — Projects</h2>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">PILA — Digital Ticketing System</div>
+      <div class="meta">Next.js · TypeScript · Supabase</div>
+    </div>
+    <div class="sub"><a href="https://pila-silk.vercel.app">pila-silk.vercel.app</a> · <a href="https://github.com/yobb-bit/pila">github.com/yobb-bit/pila</a></div>
+    <ul>
+      <li>Built a full ticketing platform with authentication, user registration, and role-based onboarding flows.</li>
+      <li>Integrated Supabase for Postgres, Auth, and Row Level Security; routes protected via Next.js middleware.</li>
+      <li>Added a PWA layer with <span style="font-family: monospace;">next-pwa</span> and QR code generation for ticket verification.</li>
+      <li>Built an admin panel and notification system; data visualised with Recharts.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">Pisoblox — Marketplace Platform</div>
+      <div class="meta">Next.js · TypeScript · Supabase</div>
+    </div>
+    <div class="sub"><a href="https://pisoblox.vercel.app">pisoblox.vercel.app</a> · <a href="https://github.com/yobb-bit/pisoblox">github.com/yobb-bit/pisoblox</a></div>
+    <ul>
+      <li>Developed a listings marketplace with create, browse, and sold-state tracking for user accounts.</li>
+      <li>Designed and implemented the Postgres schema in Supabase with Row Level Security enabled, enforcing per-user data access.</li>
+      <li>Implemented auth, user profiles, and an application workflow with a protected admin area.</li>
+      <li>Styled with Tailwind CSS and Radix UI primitives; used Framer Motion for interface transitions.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">linkd.design — Link-in-Bio Platform</div>
+      <div class="meta">Next.js · TypeScript</div>
+    </div>
+    <div class="sub"><a href="https://linkd-design.vercel.app">linkd-design.vercel.app</a> · <a href="https://github.com/yobb-bit/linkd-design</a></div>
+    <ul>
+      <li>Built a customisable link-in-bio product aimed at Gen Z creators and gaming communities.</li>
+      <li>Implemented deep visual customisation — animated backgrounds, custom cursors, fonts, and effects.</li>
+      <li>Authored a formal product specification covering target users, positioning, and brand direction.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">portYob — Developer Portfolio</div>
+      <div class="meta">Next.js · TypeScript · Tailwind CSS</div>
+    </div>
+    <div class="sub"><a href="https://github.com/yobb-bit/portYob">github.com/yobb-bit/portYob</a></div>
+    <ul>
+      <li>Designed and built this portfolio using the App Router, with a custom monochrome design system.</li>
+      <li>Implemented light and dark theming with persisted preference and a system-following default.</li>
+      <li>Used <span style="font-family: monospace;">IntersectionObserver</span> for scroll-triggered reveal animations and added a PWA-ready icon set.</li>
+    </ul>
+  </div>
+
+  <h2>03 — Skills</h2>
+  <div class="skill-group">
+    <span class="skill-label">Languages —</span>
+    <span class="skill-list">TypeScript, JavaScript, Java, HTML, CSS, SQL</span>
+  </div>
+  <div class="skill-group">
+    <span class="skill-label">Frameworks &amp; Libraries —</span>
+    <span class="skill-list">Next.js (App Router), React, Tailwind CSS, Radix UI, Framer Motion, Recharts, Supabase JS</span>
+  </div>
+  <div class="skill-group">
+    <span class="skill-label">Backend &amp; Data —</span>
+    <span class="skill-list">Supabase (Postgres, Auth, Row Level Security), REST APIs, schema design</span>
+  </div>
+  <div class="skill-group">
+    <span class="skill-label">Tools &amp; Workflow —</span>
+    <span class="skill-list">Git &amp; GitHub, Vercel, PWA (next-pwa), Figma, VS Code, npm</span>
+  </div>
+  <div class="skill-group">
+    <span class="skill-label">Professional —</span>
+    <span class="skill-list">Supplier sourcing &amp; vendor coordination, customer support, order fulfillment, Discord community management</span>
+  </div>
+
+  <h2>04 — Experience</h2>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">Digital Item Delivery &amp; Customer Support</div>
+      <div class="meta">Aug 2025 – Dec 2025</div>
+    </div>
+    <div class="sub">Bloxystore.com</div>
+    <ul>
+      <li>Delivered digital in-game items to customers and managed order fulfillment for the shop's product catalogue.</li>
+      <li>Provided responsive customer support, maintaining fast turnaround during peak US business hours.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">Digital Item Delivery &amp; Sourcing Assistant</div>
+      <div class="meta">2025 · &lt;6 months</div>
+    </div>
+    <div class="sub">Independent e-Commerce Shop (eBay)</div>
+    <ul>
+      <li>Handled customer communication and order fulfillment during peak buying hours.</li>
+      <li>Sourced additional suppliers to meet rising demand, connecting the shop with bulk, low-cost sellers.</li>
+      <li>Supported daily operations when the shop owner was unavailable.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div class="title">Freelance Web Developer</div>
+      <div class="meta">2024 – Present</div>
+    </div>
+    <div class="sub">Self-directed</div>
+    <ul>
+      <li>Built and deployed multiple full-stack web applications — see Projects above.</li>
+      <li>Maintained 14 repositories on GitHub spanning TypeScript, JavaScript, and Java.</li>
+    </ul>
+  </div>
+
+  <h2>05 — Education</h2>
+  <div class="entry">
+    <div class="row">
+      <div class="title">BS Information Technology</div>
+      <div class="meta">2nd Year · In progress</div>
+    </div>
+    <div class="sub">Philippines</div>
+  </div>
+
+  <p class="note">
+    References for all projects are available on GitHub at github.com/yobb-bit.
+    Live deployments linked above.
+  </p>
+
+</div>
+</body>
+</html>

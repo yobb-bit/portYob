@@ -65,8 +65,14 @@ Related repos by the same author that I also looked at:
   Code touched the project. The code looks AI-generated (Lovable / ChatGPT), not copied from a repo.
   `components/AnimatedProjects.tsx` still has a "swap for your real projects" placeholder comment.
 
-## Known Issues (fix when convenient)
-- `components/About.tsx` links to `/John-Kent-CV.pdf`, but that file doesn't exist in `public/` — it's a 404
+## Known Issues
+_(none open)_
+
+- ✅ Fixed: `components/About.tsx` linked to `/John-Kent-CV.pdf` but the file was missing (404).
+  A 2-page developer CV now lives at `public/John-Kent-CV.pdf`. Filename must match the link
+  exactly — macOS is case-insensitive but Vercel is not.
+  Source HTML for regenerating it: keep a copy in the repo (e.g. `cv/cv.html`) and rebuild with
+  `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --print-to-pdf=...`.
 
 ## Tone
 Talk to me like a patient teacher, not a senior dev reviewing a PR. I'm here to learn.
