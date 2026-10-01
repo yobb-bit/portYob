@@ -82,6 +82,12 @@ Related repos by the same author that I also looked at:
   browsers silently ignore it. Any `@import` must be the first thing in the file.
 - `next/font/google` fetches from Google at build time. If a build fails inside
   `next-font-loader`, it's usually a network hiccup, not a code problem — just rebuild.
+- `components/About.tsx` hardcodes a repo count in STATS (currently 13). Update it when adding
+  repos, or it starts looking inflated. Verify with `gh repo list yobb-bit --json name --jq length`.
+- `components/Projects.tsx` is the LIVE projects section (used by `app/page.tsx`).
+  `components/AnimatedProjects.tsx`, `AnimatedSkills.tsx`, `Navbar.tsx`, `ScrollReveal.tsx`, and
+  `ui/portfolio-hero.tsx` are NOT imported anywhere — dead files from the original template.
+  Delete them once you're sure you don't want them.
 
 ## Tone
 Talk to me like a patient teacher, not a senior dev reviewing a PR. I'm here to learn.

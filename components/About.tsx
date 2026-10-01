@@ -1,8 +1,8 @@
 const STATS = [
   { num: "2nd", label: "Year IT Student" },
-  { num: "3+", label: "Projects Completed" },
+  { num: "13", label: "GitHub Repositories" },
+  { num: "3+", label: "Apps Deployed" },
   { num: "10+", label: "Technologies" },
-  { num: "5+", label: "Ideas in Progress" },
 ];
 
 export default function About() {
