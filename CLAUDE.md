@@ -66,13 +66,22 @@ Related repos by the same author that I also looked at:
   `components/AnimatedProjects.tsx` still has a "swap for your real projects" placeholder comment.
 
 ## Known Issues
-_(none open)_
-
 - ✅ Fixed: `components/About.tsx` linked to `/John-Kent-CV.pdf` but the file was missing (404).
   A 2-page developer CV now lives at `public/John-Kent-CV.pdf`. Filename must match the link
   exactly — macOS is case-insensitive but Vercel is not.
   Source HTML for regenerating it: keep a copy in the repo (e.g. `cv/cv.html`) and rebuild with
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --print-to-pdf=...`.
+- ✅ Fixed: page rendered as unstyled HTML. Cause was stale dev-mode files left inside `.next/`
+  (`.next/static/development/`, `.next/server/pages/`) mixed in with the production build. The
+  server threw `Cannot find module './vendor-chunks/lucide-react.js'` and returned a bare 500
+  page with no stylesheet links. Fix: delete `.next` and rebuild.
+  **If the site ever looks unstyled again, run `rm -rf .next && npm run build` first.**
+
+## Gotchas
+- `app/globals.css` had an `@import` after the `@tailwind` directives, which is invalid CSS —
+  browsers silently ignore it. Any `@import` must be the first thing in the file.
+- `next/font/google` fetches from Google at build time. If a build fails inside
+  `next-font-loader`, it's usually a network hiccup, not a code problem — just rebuild.
 
 ## Tone
 Talk to me like a patient teacher, not a senior dev reviewing a PR. I'm here to learn.
