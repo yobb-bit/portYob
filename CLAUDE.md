@@ -91,3 +91,111 @@ Related repos by the same author that I also looked at:
 
 ## Tone
 Talk to me like a patient teacher, not a senior dev reviewing a PR. I'm here to learn.
+
+---
+
+# 📋 ACTIVE PLAN — Per-project detail pages
+
+**Status: PLANNED, NOT YET BUILT. Do not assume any of this exists.**
+Nothing below has been written to disk except this section. The plan was agreed on
+2026-10-01 but not started, because the developer was tired. Pick up at Step 1.
+
+## What we're building
+Each project gets its own page. Clicking a card on the homepage navigates to a
+dedicated page with documentation, screenshots, video, and a "what is this for"
+conclusion — instead of jumping straight to the Vercel deployment.
+
+## Decisions already agreed (do not re-ask)
+- **URL shape:** `/projects/pila`, `/projects/pisoblox`, `/projects/linkd-design`
+- **Nav on detail pages:** sidebar links point back to the homepage (`/#about`),
+  so they don't become dead clicks on a page with no `#about` section
+- **Media:** screenshots + video clips under ~5MB only. The 68MB and 210MB videos
+  in `~/Desktop/linkd-design/documentation/` must NEVER be committed — see Media Rules
+- **Copy:** Claude writes the documentation from verified repo/deploy evidence, then
+  the developer edits it. Accuracy over marketing language
+- **Screenshots:** slots get built now, but photos are coming from the developer's
+  phone later — see Screenshot Workflow
+
+## Build order
+1. **Move shared layout.** `<Header />` and `<main className="lg:pl-[14rem]">` currently
+   live in `app/page.tsx`; move them into `app/layout.tsx`. `layout.tsx` wraps *every* page,
+   `page.tsx` wraps exactly one. Without this, new pages load with no sidebar or theme toggle.
+2. **Fix nav links.** Add `usePathname()` in `Header.tsx`. On `/` keep `#about`; on detail
+   pages emit `/#about`. Also guard the scroll-spy `useEffect` for pages with no such sections.
+3. **Create `lib/projects.ts`** — single source of truth. Card grid AND detail pages read
+   the same data, so a description is edited once, not twice. Project data is currently
+   hardcoded at `components/Projects.tsx:14`; move it out.
+   Fields: `slug`, `title`, `tagline`, `purpose`, `features[]`, `tech[]`, `liveUrl`,
+   `repoUrl`, `status`, `screenshots[]`, `videoUrl`, `learned`
+4. **Create `app/projects/[slug]/page.tsx`** — one file serves all projects. Include
+   `generateStaticParams()` (pre-render at build time, so no server needed) and
+   `generateMetadata()` (per-project titles so shared links look right in Discord/LinkedIn).
+5. **Detail page sections:** purpose → live/source buttons → screenshots → video →
+   tech stack → how it works → what I learned → next-project link. Reuse existing
+   classes (`.card`, `.tag`, `.section-label`, `.container-narrow`, `.halftone`, `.btn-primary`)
+   so it matches the design system automatically.
+6. **Add `app/not-found.tsx`** — a bad slug currently shows Next's plain default 404.
+7. **Repoint the cards** in `components/Projects.tsx` to `/projects/[slug]`. "View Live"
+   moves to the detail page. Don't change the card styling.
+8. **Verify:** `npx tsc --noEmit`, clean build, curl all 3 routes for 200 + real content,
+   curl a bad slug for 404, confirm homepage renders unchanged.
+9. **Then** offer to clean the git history leak below (only when the dev asks).
+
+## Two real bugs this plan fixes
+- **Nav lives in the wrong file.** `app/page.tsx:12` has `<Header />` but `app/layout.tsx:53`
+  renders only `{children}`. Any new page loses the nav, logo, and theme toggle.
+- **Nav links silently break off-homepage.** `Header.tsx:7-12` uses `#about`/`#skills` anchors.
+  On `/projects/pila` there is no `#about` element, so the click does nothing — no error, just
+  a dead link. Hence the `usePathname()` fix in Step 2.
+
+## Verified project facts (use these, don't re-invent)
+- **PILA** — live tagline: *"Virtual queuing system for Filipino government offices."*
+  Deps: `@supabase/supabase-js`, `@supabase/ssr`, `next-pwa`, `qrcode.react`, `recharts`.
+  Honest pitch: get a queue number remotely instead of standing in line, QR verification,
+  staff dashboard. ⚠️ **Its README is still untouched `create-next-app` boilerplate**, so
+  there is no written spec — the page must come from code + the live site, and the developer
+  needs to confirm unverifiable claims (e.g. whether real people use it).
+- **Pisoblox** — Roblox items/accounts marketplace, Filipino-language UI. Deps include
+  `framer-motion`, `lucide-react`, `@radix-ui/react-dropdown-menu`, `tailwind-merge`, `clsx`,
+  `@supabase/supabase-js`. Has a real `supabase-schema.sql` with a `listings` table
+  (category enum: item/account/robux) and RLS policies.
+- **linkd.design** — *"Your link, your vibe."* Animated effects, background music, custom
+  cursors. Has `PRODUCT.md`, a `backend/` folder, and `design_handoff_showcase/` (with
+  `assets/bg-edit.mp4`). Design-heavy product, not a generic link-in-bio.
+
+## Media rules (do not violate)
+- **Never commit files over ~5MB.** Git stores a permanent full copy of every commit, so a
+  210MB video would bloat the repo on every future `git push` and can only be removed by
+  rewriting history. GitHub warns at 50MB and hard-blocks at 100MB per file.
+- `~/Desktop/linkd-design/documentation/` contains videos at 8MB, 23MB, 68MB, and **210MB** —
+  all too large to commit. Link to them externally (YouTube/Vimeo/Drive) instead, or commit
+  a compressed clip. Never copy that folder wholesale into `public/`.
+- `ffmpeg` is **not installed** on this machine (`sips` is, and works for images).
+
+## Screenshot workflow (for when the developer has photos)
+1. AirDrop or email photos from phone to Mac
+2. Resize to ~1600px wide before committing — phone screenshots are often 4000px+/5MB and
+   look identical on screen at a fraction of the size. `sips` can do this.
+3. Put them in `public/projects/`, named in order: `pila-01.jpg`, `pila-02.jpg`, ...
+4. Ask the developer to confirm, then wire them into `lib/projects.ts` with captions
+5. Until photos arrive, screenshot sections must show a quiet intentional placeholder —
+   not a broken-image icon
+
+## ⏳ Outstanding, waiting on the developer
+- [ ] Screenshots for all three projects (coming from phone)
+- [ ] Decide video hosting: YouTube / Vimeo / Drive link / small local clips
+- [ ] Developer edits the Claude-written documentation copy (school year etc. are personal claims
+      only they can confirm)
+- [ ] Review dead files: `AnimatedProjects.tsx`, `AnimatedSkills.tsx`, `Navbar.tsx`,
+      `ScrollReveal.tsx`, `ui/portfolio-hero.tsx` — not imported anywhere
+
+## 🔒 Security note — unfixed, dev said "not now"
+The three live Vercel URLs (`pila-silk`, `pisoblox`, `linkd-design`) are permanently visible in
+public git history at commit `44c87e2`, from when the CV was added. Anyone can find them. Fixing
+this requires rewriting history, which is why it was deliberately deferred. If the developer ever
+wants to clean it before the sites are public, show the exact `git filter-repo` commands and
+explain each step first — do not just run it.
+
+## Minor note
+`next-pwa` (a PILA dependency) is deprecated upstream. Not a problem, just be aware if the
+developer reads about it later.
