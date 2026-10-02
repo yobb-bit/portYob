@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import ImageGallery from "@/components/ImageGallery";
 import { PROJECTS } from "@/lib/projects";
 
@@ -132,10 +133,43 @@ export default async function ProjectDetailPage({
             </section>
           )}
 
+          {project.uiShots && project.uiShots.length > 0 && (
+            <section>
+              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+                The app
+              </h2>
+              {/* These are phone screenshots (portrait), so the grid stays
+                  narrow and centers — stretching them wide would look odd. */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5 max-w-5xl">
+                {project.uiShots.map((shot) => (
+                  <figure
+                    key={shot.src}
+                    className="group overflow-hidden rounded-[12px] border border-gray-200 bg-gray-50 transition-all duration-[350ms] ease-out-expo hover:-translate-y-[2px] hover:border-gray-300 hover:shadow-card-hover"
+                  >
+                    <div className="aspect-[9/16] overflow-hidden">
+                      <Image
+                        src={shot.src}
+                        alt={shot.alt}
+                        width={1080}
+                        height={1920}
+                        className="h-full w-full object-cover object-top transition-transform duration-[500ms] ease-out-expo group-hover:scale-[1.05]"
+                      />
+                    </div>
+                    {shot.caption && (
+                      <figcaption className="px-3 py-2 text-micro text-gray-500">
+                        {shot.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            </section>
+          )}
+
           {project.screenshots.length > 0 && (
             <section>
               <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
-                Screenshots
+                Behind the build
               </h2>
               <ImageGallery
                 images={project.screenshots}

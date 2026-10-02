@@ -14,6 +14,12 @@ export type Project = {
     caption?: string;
     ratio?: "default" | "compact";
   }[];
+  /** Screenshots of the app UI. Phone-shaped, so they get their own grid. */
+  uiShots?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  }[];
   videoUrl?: string;
   learned?: string[];
   /** e.g. "Won 3rd place at Polytechnic Institute of Tobacco Startup Competition" */
@@ -53,6 +59,38 @@ export const PROJECTS: Project[] = [
     award: "Won 3rd place at Polytechnic Institute of Tobacco Startup Competition",
     teamSize: "3 people",
     timeline: "Built in 1 week for the competition",
+    uiShots: [
+      {
+        src: "/projects/pila-ui-01.jpg",
+        alt: "The PILA login screen",
+        caption: "Sign in",
+      },
+      {
+        src: "/projects/pila-ui-02.jpg",
+        alt: "The PILA account registration screen",
+        caption: "Create an account",
+      },
+      {
+        src: "/projects/pila-ui-03.jpg",
+        alt: "Statistics screen showing service time in hours per office",
+        caption: "Average service time per office",
+      },
+      {
+        src: "/projects/pila-ui-04.jpg",
+        alt: "List of government offices available to queue at",
+        caption: "Offices available",
+      },
+      {
+        src: "/projects/pila-ui-05.jpg",
+        alt: "Live count of people currently waiting in the queue",
+        caption: "Who's currently waiting",
+      },
+      {
+        src: "/projects/pila-ui-06.jpg",
+        alt: "A user's own queue ticket after taking one",
+        caption: "Your ticket",
+      },
+    ],
     screenshots: [
       {
         src: "/projects/pila-01.jpg",
