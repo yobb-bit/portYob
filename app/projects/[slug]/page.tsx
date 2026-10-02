@@ -174,6 +174,7 @@ export default async function ProjectDetailPage({
               <ImageGallery
                 images={project.screenshots}
                 label={`${project.title} screenshots`}
+                columns={project.screenshots.some((s) => s.ratio === "wide") ? 2 : 3}
               />
             </section>
           )}

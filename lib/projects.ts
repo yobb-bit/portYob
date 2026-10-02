@@ -12,7 +12,9 @@ export type Project = {
     src: string;
     alt: string;
     caption?: string;
-    ratio?: "default" | "compact";
+    ratio?: "default" | "compact" | "wide" | "portrait";
+    width?: number;
+    height?: number;
   }[];
   /** Screenshots of the app UI. Phone-shaped, so they get their own grid. */
   uiShots?: {
@@ -167,6 +169,55 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://linkd-design.vercel.app/",
     repoUrl: "https://github.com/yobb-bit/linkd-design",
     status: "active",
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/projects/linkd-01.png",
+        alt: "linkd.design profile editor",
+        caption: "Profile editor",
+        ratio: "wide",
+        width: 1600,
+        height: 822,
+      },
+      {
+        src: "/projects/linkd-02.png",
+        alt: "linkd.design dashboard",
+        caption: "Dashboard",
+        ratio: "wide",
+        width: 1600,
+        height: 821,
+      },
+      {
+        src: "/projects/linkd-03.png",
+        alt: "linkd.design live profile preview",
+        caption: "Live profile preview",
+        ratio: "wide",
+        width: 1600,
+        height: 823,
+      },
+      {
+        src: "/projects/linkd-04.png",
+        alt: "linkd.design customization options",
+        caption: "Customization options",
+        ratio: "wide",
+        width: 1600,
+        height: 824,
+      },
+      {
+        src: "/projects/linkd-05.png",
+        alt: "linkd.design published profile page",
+        caption: "Published profile",
+        ratio: "wide",
+        width: 1600,
+        height: 824,
+      },
+      {
+        src: "/projects/linkd-06.png",
+        alt: "linkd.design themes and effects",
+        caption: "Themes and effects",
+        ratio: "wide",
+        width: 1600,
+        height: 824,
+      },
+    ],
   },
 ];
