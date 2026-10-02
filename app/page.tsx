@@ -12,13 +12,13 @@ export default function Home() {
       <Header />
       <main className="lg:pl-[14rem]">
         <Hero />
-        <hr className="divider mx-auto max-w-[42rem] px-4 sm:px-6" aria-hidden="true" />
+        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
         <About />
-        <hr className="divider mx-auto max-w-[42rem] px-4 sm:px-6" aria-hidden="true" />
+        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
         <Skills />
-        <hr className="divider mx-auto max-w-[42rem] px-4 sm:px-6" aria-hidden="true" />
+        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
         <Projects />
-        <hr className="divider mx-auto max-w-[42rem] px-4 sm:px-6" aria-hidden="true" />
+        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
         <Contact />
         <Footer />
       </main>

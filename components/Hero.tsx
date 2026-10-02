@@ -40,7 +40,7 @@ export default function Hero() {
       aria-labelledby="hero-title"
     >
       <div className="container-narrow">
-        <div className="max-w-[42rem]">
+        <div className="max-w-2xl xl:max-w-3xl">
           {/* Section label */}
           <p className="section-label mb-4 animate-entrance entrance-delay-1">
             01 — hero
@@ -64,7 +64,7 @@ export default function Hero() {
           </p>
 
           {/* Description */}
-          <p className="text-base-ui text-gray-500 max-w-[38rem] mb-10 animate-entrance entrance-delay-4">
+          <p className="text-base-ui text-gray-500 max-w-2xl mb-10 animate-entrance entrance-delay-4">
             2nd year BSIT student building for the web with JavaScript, React,
             and Next.js. I enjoy turning ideas into clean, functional digital
             experiences.

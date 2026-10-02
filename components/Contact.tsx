@@ -14,7 +14,7 @@ export default function Contact() {
         >
           Let&apos;s work<br />together.
         </h2>
-        <p className="text-base-ui text-gray-500 max-w-[38rem] mx-auto mb-10">
+        <p className="text-base-ui text-gray-500 max-w-2xl mx-auto mb-10">
           Have a project in mind or just want to chat? My inbox is always open.
         </p>
 
