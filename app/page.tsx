@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
@@ -9,19 +8,16 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="lg:pl-[14rem]">
-        <Hero />
-        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
-        <About />
-        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
-        <Skills />
-        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
-        <Projects />
-        <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
-        <Contact />
-        <Footer />
-      </main>
+      <Hero />
+      <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
+      <About />
+      <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
+      <Skills />
+      <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
+      <Projects />
+      <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
+      <Contact />
+      <Footer />
     </>
   );
 }

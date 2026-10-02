@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_ITEMS = [
@@ -14,8 +15,12 @@ const NAV_ITEMS = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    if (!isHome) return;
+
     function handleScroll() {
       const sectionIds = NAV_ITEMS.map((l) => l.href.slice(1));
       let current = "";
@@ -27,8 +32,9 @@ export default function Header() {
     }
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   return (
     <>
@@ -45,15 +51,15 @@ export default function Header() {
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link
-                  href={item.href}
+                  href={isHome ? item.href : `/${item.href}`}
                   className={`flex items-center gap-2 px-3 py-2 rounded-[8px] font-mono text-[11px] uppercase tracking-[1px] transition-colors duration-200 ${
-                    activeSection === item.href.slice(1)
+                    isHome && activeSection === item.href.slice(1)
                       ? "text-ink bg-gray-200"
                       : "text-gray-500 hover:text-ink hover:bg-gray-200"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {activeSection === item.href.slice(1) && (
+                  {isHome && activeSection === item.href.slice(1) && (
                     <span className="w-1 h-1 rounded-full bg-ink" aria-hidden="true" />
                   )}
                   {item.label}
@@ -106,9 +112,9 @@ export default function Header() {
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={isHome ? item.href : `/${item.href}`}
                   className={`font-mono text-[11px] uppercase tracking-[1px] py-2 px-3 rounded-[6px] transition-colors duration-200 ${
-                    activeSection === item.href.slice(1)
+                    isHome && activeSection === item.href.slice(1)
                       ? "text-ink bg-gray-200"
                       : "text-gray-500 hover:text-ink hover:bg-gray-200"
                   }`}
@@ -122,8 +128,6 @@ export default function Header() {
         )}
       </header>
 
-      {/* Content offset for desktop sidebar */}
-      <div className="lg:pl-[14rem]" />
     </>
   );
 }

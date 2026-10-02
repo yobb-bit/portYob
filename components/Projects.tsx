@@ -1,45 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { PROJECTS as SHARED_PROJECTS } from "@/lib/projects";
 
-interface Project {
-  emoji: string;
-  title: string;
-  description: string;
-  tags: string[];
-  link?: string;
-  repo?: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    emoji: "🎟️",
-    title: "PILA — Ticketing System",
-    description:
-      "A digital ticketing platform with authentication, onboarding, and an admin panel. QR-code ticket verification, installable as a PWA, backed by Supabase with Row Level Security.",
-    tags: ["Next.js", "TypeScript", "Supabase", "PWA"],
-    link: "https://pila-silk.vercel.app",
-    repo: "https://github.com/yobb-bit/pila",
-  },
-  {
-    emoji: "🛒",
-    title: "Pisoblox — Marketplace",
-    description:
-      "A listings marketplace for accounts, items, and Robux. Designed the Postgres schema in Supabase with Row Level Security so each user only ever sees their own data.",
-    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    link: "https://pisoblox.vercel.app",
-    repo: "https://github.com/yobb-bit/pisoblox",
-  },
-  {
-    emoji: "🔗",
-    title: "linkd.design",
-    description:
-      "A customisable link-in-bio platform for creators and gaming communities. Animated backgrounds, custom cursors, and font effects — built to feel premium, not corporate.",
-    tags: ["Next.js", "TypeScript", "Animation", "Product Design"],
-    link: "https://linkd-design.vercel.app",
-    repo: "https://github.com/yobb-bit/linkd-design",
-  },
-];
+const PROJECTS = SHARED_PROJECTS.map((p) => ({
+  slug: p.slug,
+  emoji: p.slug === "pila" ? "🎟️" : p.slug === "pisoblox" ? "🛒" : "🔗",
+  title: p.title,
+  description: p.tagline,
+  tags: p.tech.slice(0, 4),
+  link: p.liveUrl,
+  repo: p.repoUrl,
+}));
 
 export default function Projects() {
   const [inView, setInView] = useState(false);
@@ -126,20 +99,16 @@ export default function Projects() {
 
                 {(project.link || project.repo) && (
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-link"
-                      >
-                        View Live
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </a>
-                    )}
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="btn-link"
+                    >
+                      View Project
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
                     {project.repo && (
                       <a
                         href={project.repo}

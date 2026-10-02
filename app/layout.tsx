@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Header from "@/components/Header";
 import "./globals.css";
 
 const geist = Geist({
@@ -59,7 +60,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-body antialiased" suppressHydrationWarning>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Header />
+          <main className="lg:pl-[14rem]">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
