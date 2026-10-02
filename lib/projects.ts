@@ -8,9 +8,18 @@ export type Project = {
   liveUrl: string;
   repoUrl: string;
   status: "active" | "archived";
-  screenshots: { src: string; caption: string }[];
+  screenshots: {
+    src: string;
+    alt: string;
+    caption?: string;
+    ratio?: "default" | "compact";
+  }[];
   videoUrl?: string;
   learned?: string[];
+  /** e.g. "Won 3rd place at Polytechnic Institute of Tobacco Startup Competition" */
+  award?: string;
+  teamSize?: string;
+  timeline?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -19,12 +28,14 @@ export const PROJECTS: Project[] = [
     title: "PILA",
     tagline: "Virtual queuing system for Filipino government offices.",
     purpose:
-      "Helps people get a queue number remotely instead of standing in line at government offices, reducing wait times and crowding.",
+      "Instead of arriving extremely early and waiting in long lines, people can access PILA, create an account, and get a virtual ticket from their device. When it's their turn (or when they're about to be called), they're notified to go to the office. Failing to show up when called may result in being skipped.",
     features: [
       "Remote queue ticketing",
+      "Account creation and authentication",
       "QR code verification",
       "Staff dashboard for managing queues",
-      "Real-time status updates",
+      "Turn notifications to reduce crowding",
+      "Installable as a PWA",
     ],
     tech: [
       "@supabase/supabase-js",
@@ -32,11 +43,50 @@ export const PROJECTS: Project[] = [
       "next-pwa",
       "qrcode.react",
       "recharts",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
     ],
     liveUrl: "https://pila-silk.vercel.app/",
     repoUrl: "https://github.com/yobb-bit/pila",
     status: "active",
-    screenshots: [],
+    award: "Won 3rd place at Polytechnic Institute of Tobacco Startup Competition",
+    teamSize: "3 people",
+    timeline: "Built in 1 week for the competition",
+    screenshots: [
+      {
+        src: "/projects/pila-01.jpg",
+        alt: "The team working together on the code during preparation",
+        caption: "Preparation — the team coding together",
+      },
+      {
+        src: "/projects/pila-02.jpg",
+        alt: "Presenting the PILA app at the startup competition",
+        caption: "Presenting PILA at the competition",
+      },
+      {
+        src: "/projects/pila-03.jpg",
+        alt: "The team after presenting PILA at the competition",
+        caption: "After the presentation",
+      },
+      {
+        src: "/projects/pila-04.jpg",
+        alt: "The team on stage receiving the 3rd place award",
+        caption: "On stage receiving 3rd place",
+      },
+      {
+        src: "/projects/pila-05.jpg",
+        alt: "Certificate of participation from the competition",
+        caption: "Certificate of participation",
+        ratio: "compact",
+      },
+    ],
+    learned: [
+      "Building with Supabase (Auth + RLS) for secure data access",
+      "Creating a staff dashboard to manage queues in real-time",
+      "Implementing QR code verification for ticket validation",
+      "Working as a team under a tight timeline for a competition",
+    ],
   },
   {
     slug: "pisoblox",

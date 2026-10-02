@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { PROJECTS, type Project } from "@/lib/projects";
+import ImageGallery from "@/components/ImageGallery";
+import { PROJECTS } from "@/lib/projects";
 
 export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
@@ -57,6 +58,19 @@ export default async function ProjectDetailPage({
         <p className="text-base-ui text-gray-500 max-w-2xl mb-8">
           {project.tagline}
         </p>
+
+        {project.award && (
+          <div className="card mb-8 max-w-3xl">
+            <div className="p-5">
+              <p className="section-label mb-2">achievement</p>
+              <p className="text-base-ui text-ink mb-3">{project.award}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.teamSize && <span className="tag">{project.teamSize}</span>}
+                {project.timeline && <span className="tag">{project.timeline}</span>}
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-4 mb-10">
           <a href={project.liveUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">
@@ -115,6 +129,18 @@ export default async function ProjectDetailPage({
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {project.screenshots.length > 0 && (
+            <section>
+              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+                Screenshots
+              </h2>
+              <ImageGallery
+                images={project.screenshots}
+                label={`${project.title} screenshots`}
+              />
             </section>
           )}
 
