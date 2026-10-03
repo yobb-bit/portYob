@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const STATS = [
   { num: "2nd", label: "Year IT Student" },
   { num: "13", label: "GitHub Repositories" },
@@ -17,8 +19,22 @@ export default function About() {
         <p className="section-label mb-4">02 — about</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left column: text */}
+          {/* Left column: image + text */}
           <div>
+            <div className="mb-8 flex justify-center lg:justify-start">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
+                <Image
+                  src="/portrait.png"
+                  alt="John Kent Blancaflor portrait"
+                  fill
+                  sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                  className="rounded-full object-cover object-center border-2 border-gray-200 shadow-lg transition-transform duration-500 ease-out-expo hover:scale-[1.02] dark:border-gray-700"
+                  priority
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-transparent to-gray-100/20 pointer-events-none" aria-hidden="true" />
+              </div>
+            </div>
+
             <h2
               id="about-title"
               className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-8 leading-tight"
