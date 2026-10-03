@@ -8,6 +8,7 @@ export type Project = {
   liveUrl: string;
   repoUrl: string;
   status: "active" | "archived";
+  cover?: string;
   screenshots: {
     src: string;
     alt: string;
@@ -35,6 +36,7 @@ export const PROJECTS: Project[] = [
     slug: "pila",
     title: "PILA",
     tagline: "Virtual queuing system for Filipino government offices.",
+    cover: "/projects/pila-cover.jpg",
     purpose:
       "Instead of arriving extremely early and waiting in long lines, people can access PILA, create an account, and get a virtual ticket from their device. When it's their turn (or when they're about to be called), they're notified to go to the office. Failing to show up when called may result in being skipped.",
     features: [
@@ -132,6 +134,7 @@ export const PROJECTS: Project[] = [
     slug: "pisoblox",
     title: "Pisoblox",
     tagline: "Roblox items, accounts, and robux marketplace with Filipino-language UI.",
+    cover: "/projects/pisoblox-cover.png",
     purpose:
       "A marketplace platform for Roblox-related items and accounts, designed with a Filipino-first experience.",
     features: [
@@ -157,6 +160,7 @@ export const PROJECTS: Project[] = [
     slug: "linkd-design",
     title: "linkd.design",
     tagline: "Your link, your vibe.",
+    cover: "/projects/linkd-cover.png",
     purpose:
       "A customizable link-in-bio platform with animated effects, custom cursors, and background music to match your personal vibe.",
     features: [

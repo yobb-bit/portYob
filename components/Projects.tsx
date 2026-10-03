@@ -2,16 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { PROJECTS as SHARED_PROJECTS } from "@/lib/projects";
 
 const PROJECTS = SHARED_PROJECTS.map((p) => ({
   slug: p.slug,
-  emoji: p.slug === "pila" ? "🎟️" : p.slug === "pisoblox" ? "🛒" : "🔗",
   title: p.title,
   description: p.tagline,
   tags: p.tech.slice(0, 4),
   link: p.liveUrl,
   repo: p.repoUrl,
+  cover: p.cover,
 }));
 
 export default function Projects() {
@@ -69,16 +70,24 @@ export default function Projects() {
                 transition: `opacity 0.55s ease-out ${i * 120}ms, transform 0.55s ease-out ${i * 120}ms`,
               }}
             >
-              <div
-                className="aspect-[4/3] flex items-center justify-center text-5xl overflow-hidden relative"
-                style={{ background: "linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%)" }}
-              >
-                <span
-                  className="transition-transform duration-420 ease-out-expo group-hover:scale-[1.04]"
-                  aria-hidden="true"
-                >
-                  {project.emoji}
-                </span>
+              <div className="aspect-[4/3] overflow-hidden relative bg-gray-50 border-b border-gray-200">
+                {project.cover ? (
+                  <Image
+                    src={project.cover}
+                    alt={`${project.title} cover`}
+                    fill
+                    className="object-cover object-center transition-transform duration-[500ms] ease-out-expo group-hover:scale-[1.04]"
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center text-5xl">
+                    <span
+                      className="transition-transform duration-420 ease-out-expo group-hover:scale-[1.04]"
+                      aria-hidden="true"
+                    >
+                      {project.slug === "pila" ? "🎟️" : project.slug === "pisoblox" ? "🛒" : "🔗"}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="p-card">
