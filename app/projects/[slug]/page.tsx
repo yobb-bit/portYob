@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import ImageGallery from "@/components/ImageGallery";
 import { PROJECTS } from "@/lib/projects";
+import { publicPath } from "@/lib/site-path";
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
@@ -148,7 +151,7 @@ export default async function ProjectDetailPage({
                   >
                     <div className="aspect-[9/16] overflow-hidden">
                       <Image
-                        src={shot.src}
+                        src={publicPath(shot.src)}
                         alt={shot.alt}
                         width={1080}
                         height={1920}

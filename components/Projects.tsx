@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PROJECTS as SHARED_PROJECTS } from "@/lib/projects";
+import { publicPath } from "@/lib/site-path";
 
 const PROJECTS = SHARED_PROJECTS.map((p) => ({
   slug: p.slug,
@@ -73,7 +74,7 @@ export default function Projects() {
               <div className="aspect-[4/3] overflow-hidden relative bg-gray-50 border-b border-gray-200">
                 {project.cover ? (
                   <Image
-                    src={project.cover}
+                    src={publicPath(project.cover)}
                     alt={`${project.title} cover`}
                     fill
                     className="object-cover object-center transition-transform duration-[500ms] ease-out-expo group-hover:scale-[1.04]"

@@ -1,7 +1,4 @@
-/* @import must come FIRST in a CSS file — the spec requires it before any other
-   rule, and browsers silently drop it otherwise. Tailwind's own @import was
-   hoisted above this, so this line was being ignored entirely.
-   Note: fonts also load via next/font in layout.tsx, so this is a backup. */
+/* Keep font loading in CSS so static builds do not need to fetch fonts at build time. */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,200..900&display=swap');
 
 @tailwind base;

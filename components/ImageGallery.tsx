@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { publicPath } from "@/lib/site-path";
 
 type GalleryImage = {
   src: string;
@@ -75,7 +76,7 @@ export default function ImageGallery({
         >
           <div className={`${RATIO_CLASSES[ratio]} overflow-hidden`}>
             <Image
-              src={image.src}
+              src={publicPath(image.src)}
               alt={image.alt}
               width={image.width ?? 1600}
               height={image.height ?? 1200}

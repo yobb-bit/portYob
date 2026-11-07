@@ -6,6 +6,7 @@
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Menu, X, ChevronDown, ArrowUp } from "lucide-react";
+import { publicPath } from "@/lib/site-path";
 
 // ─── BlurText ────────────────────────────────────────────────────────────────
 // Animates text by blurring each letter/word in from the top.
@@ -297,7 +298,7 @@ export default function PortfolioHero() {
                 lg:w-[129px] lg:h-[218px] rounded-full overflow-hidden shadow-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/profile.jpg"
+                  src={publicPath("/profile.jpg")}
                   alt="John Kent"
                   className="w-full h-full object-cover"
                 />

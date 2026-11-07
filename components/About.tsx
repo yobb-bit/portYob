@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { publicPath } from "@/lib/site-path";
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
             <div className="mb-8 flex justify-center lg:justify-start">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
                 <Image
-                  src="/portrait.png"
+                  src={publicPath("/portrait.png")}
                   alt="John Kent Blancaflor portrait"
                   fill
                   sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
@@ -44,7 +45,7 @@ export default function About() {
             </p>
 
             <a
-              href="/John-Kent-CV.pdf"
+              href={publicPath("/John-Kent-CV.pdf")}
               download
               className="btn-primary inline-flex mt-8"
             >

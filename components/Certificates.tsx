@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { publicPath } from "@/lib/site-path";
 
 const CERTIFICATES = [
   {
@@ -68,7 +69,7 @@ export default function Certificates() {
                 <div className="lg:col-span-2">
                   <div className="aspect-[16/10] overflow-hidden rounded-[12px] border border-gray-200 bg-gray-50">
                     <Image
-                      src={cert.image}
+                      src={publicPath(cert.image)}
                       alt={`${cert.title} certificate`}
                       width={1600}
                       height={1000}
@@ -90,7 +91,7 @@ export default function Certificates() {
                   )}
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                     <a
-                      href={cert.pdf}
+                      href={publicPath(cert.pdf)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-link"

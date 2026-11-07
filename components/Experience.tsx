@@ -1,5 +1,6 @@
 import { ClipboardCheck, MessageCircle, PackageCheck, Store } from "lucide-react";
 import Image from "next/image";
+import { publicPath } from "@/lib/site-path";
 
 const EXPERIENCE = [
   {
@@ -46,7 +47,7 @@ export default function Experience() {
             <article key={item.company} className="card p-card flex flex-col">
               <div className="flex items-start gap-3 mb-5">
                 <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-[12px] border border-gray-200 bg-black p-1" aria-hidden="true">
-                  <Image src={item.logo} alt="" fill sizes="44px" className="object-contain" />
+                  <Image src={publicPath(item.logo)} alt="" fill sizes="44px" className="object-contain" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center justify-between gap-2">
