@@ -6,7 +6,7 @@ export default function Contact() {
       aria-labelledby="contact-title"
     >
       <div className="container-narrow text-center">
-        <p className="section-label mb-4">05 — contact</p>
+        <p className="section-label mb-4">06 — contact</p>
 
         <h2
           id="contact-title"

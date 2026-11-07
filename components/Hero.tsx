@@ -65,7 +65,7 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-base-ui text-gray-500 max-w-2xl mb-10 animate-entrance entrance-delay-4">
-            2nd year BSIT student building for the web with JavaScript, React,
+            3rd year BSIT student building for the web with JavaScript, React,
             and Next.js. I enjoy turning ideas into clean, functional digital
             experiences.
           </p>

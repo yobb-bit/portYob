@@ -28,12 +28,12 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: "John Kent Blancaflor | Developer Portfolio",
   description:
-    "Personal developer portfolio of John Kent Blancaflor — 2nd year BSIT student, building for the web with JavaScript, React, and Next.js.",
+    "Personal developer portfolio of John Kent Blancaflor — 3rd year BSIT student, building for the web with JavaScript, React, and Next.js.",
   metadataBase: new URL("https://portyob.vercel.app"),
   openGraph: {
     title: "John Kent Blancaflor | Developer Portfolio",
     description:
-      "Personal developer portfolio of John Kent Blancaflor — 2nd year BSIT student, building for the web.",
+      "Personal developer portfolio of John Kent Blancaflor — 3rd year BSIT student, building for the web.",
     url: "https://portyob.vercel.app",
     siteName: "John Kent's Portfolio",
     locale: "en_US",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "John Kent Blancaflor | Developer Portfolio",
-    description: "Personal developer portfolio of John Kent Blancaflor.",
+    description: "Personal developer portfolio of John Kent Blancaflor, 3rd year BSIT student.",
     images: ["/profile.jpg"],
   },
 };
