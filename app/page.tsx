@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Certificates from "@/components/Certificates";
@@ -13,7 +15,11 @@ export default function Home() {
       <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
       <About />
       <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
+      <Experience />
+      <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
       <Skills />
+      <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
+      <TechStack />
       <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />
       <Projects />
       <hr className="divider mx-auto max-w-6xl px-6 md:px-10 lg:px-16" aria-hidden="true" />

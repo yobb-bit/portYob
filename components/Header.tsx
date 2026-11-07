@@ -7,7 +7,9 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_ITEMS = [
   { label: "about", href: "#about" },
+  { label: "experience", href: "#experience" },
   { label: "skills", href: "#skills" },
+  { label: "tech stack", href: "#tech-stack" },
   { label: "projects", href: "#projects" },
   { label: "certificates", href: "#certificates" },
   { label: "contact", href: "#contact" },
@@ -18,6 +20,15 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (!isHome) return;
@@ -90,6 +101,7 @@ export default function Header() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMenuOpen ? (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -108,7 +120,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="border-t border-gray-200 py-4 px-4 bg-gray-50 dark:bg-gray-100">
+          <div id="mobile-navigation" className="border-t border-gray-200 py-4 px-4 bg-gray-50 dark:bg-gray-950">
             <nav className="flex flex-col space-y-2" role="navigation" aria-label="Mobile navigation">
               {NAV_ITEMS.map((item) => (
                 <Link
