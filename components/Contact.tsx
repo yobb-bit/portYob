@@ -10,7 +10,7 @@ export default function Contact() {
 
         <h2
           id="contact-title"
-          className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-4"
+          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-4"
         >
           Let&apos;s work<br />together.
         </h2>

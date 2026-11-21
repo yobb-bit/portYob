@@ -40,7 +40,7 @@ export default function TechStack() {
         <p className="section-label mb-4">tech stack</p>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <h2 id="tech-stack-title" className="font-pixel text-3xl sm:text-4xl lowercase text-ink">
+            <h2 id="tech-stack-title" className="font-display text-3xl sm:text-4xl lowercase text-ink">
               tools i work with
             </h2>
             <p className="text-base-ui text-gray-500 mt-3">A growing toolkit across software and IT.</p>
@@ -61,7 +61,7 @@ export default function TechStack() {
                     <span className="grid h-8 w-8 place-items-center rounded-[8px] border border-gray-200 text-gray-600 dark:text-gray-300">
                       <Icon size={16} strokeWidth={1.7} aria-hidden="true" />
                     </span>
-                    <h3 className="font-pixel text-lg text-ink">{group.label}</h3>
+                    <h3 className="font-display text-lg text-ink">{group.label}</h3>
                   </div>
                   <span className="text-micro text-gray-400">0{index + 1}</span>
                 </div>

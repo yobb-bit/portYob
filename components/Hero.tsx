@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const TYPED_WORDS = ["developer", "designer", "creator", "student"];
+const TYPED_WORDS = ["restocker", "delivery operator", "web developer", "student"];
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -49,25 +49,26 @@ export default function Hero() {
           {/* Main heading */}
           <h1
             id="hero-title"
-            className="font-pixel text-display-title text-ink mb-6 animate-entrance entrance-delay-2"
+            className="font-display text-display-title text-ink mb-6 animate-entrance entrance-delay-2"
             aria-live="polite"
           >
             Hi, I&apos;m
             <br />
-            <span className="text-ink font-pixel">John Kent</span>
+            <span className="text-ink font-display">John Kent</span>
           </h1>
 
           {/* Typed tagline */}
           <p className="text-base-ui text-gray-500 mb-10 animate-entrance entrance-delay-3">
-            I&apos;m a <span className="font-pixel text-ink">{displayText}</span>{" "}
+            I&apos;m a <span className="font-display text-ink">{displayText}</span>{" "}
             <span className="typed-cursor" aria-hidden="true" />
           </p>
 
           {/* Description */}
           <p className="text-base-ui text-gray-500 max-w-2xl mb-10 animate-entrance entrance-delay-4">
             3rd year BSIT student building for the web with JavaScript, React,
-            and Next.js. I enjoy turning ideas into clean, functional digital
-            experiences.
+            and Next.js. I also work with BloxSupply as a restocker and delivery
+            operator for Murder Mystery 2 items, coordinating inventory and
+            time-sensitive trades.
           </p>
 
           {/* CTA buttons */}

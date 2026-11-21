@@ -7,7 +7,7 @@ export default function NotFound() {
         <p className="section-label mb-4">404</p>
         <h1
           id="not-found-title"
-          className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-4"
+          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-4"
         >
           Page not found
         </h1>

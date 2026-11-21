@@ -49,7 +49,7 @@ export default function Projects() {
 
         <h2
           id="projects-title"
-          className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-10"
+          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-10"
         >
           things i&apos;ve built.
         </h2>
@@ -92,7 +92,7 @@ export default function Projects() {
               </div>
 
               <div className="p-card">
-                <h3 className="font-pixel text-xl text-ink mb-2">
+                <h3 className="font-display text-xl text-ink mb-2">
                   {project.title}
                 </h3>
                 <p className="text-base-ui text-gray-500 mb-4">

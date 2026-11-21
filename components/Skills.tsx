@@ -58,7 +58,7 @@ export default function Skills() {
       <div className="container-narrow">
         <p className="section-label mb-4">03 — skills</p>
 
-        <h2 id="skills-title" className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-4">
+        <h2 id="skills-title" className="font-display text-3xl sm:text-4xl lowercase text-ink mb-4">
           skills in practice
         </h2>
         <p className="text-base-ui text-gray-500 mb-10 max-w-2xl">
@@ -76,7 +76,7 @@ export default function Skills() {
                 </span>
                 <div>
                   <p className="text-micro text-gray-400 mb-1">{group.number} / focus</p>
-                  <h3 className="font-pixel text-xl text-ink">{group.label}</h3>
+                  <h3 className="font-display text-xl text-ink">{group.label}</h3>
                   <p className="text-[12px] text-gray-500 mt-1">{group.note}</p>
                 </div>
               </div>

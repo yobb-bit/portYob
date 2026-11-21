@@ -31,6 +31,20 @@ const EXPERIENCE = [
     skills: ["Digital Product Operations", "Online Transactions", "Customer-Facing Work"],
     tools: ["Shopify", "Shopify Inbox", "Gmail", "Discord"],
   },
+  {
+    company: "BloxSupply",
+    logo: "/experience/bloxsupply.png",
+    role: "Restocker / Delivery — Murder Mystery 2 items",
+    duration: "Current",
+    summary: "High-volume inventory restocking and delivery coordination for a Roblox/MM2 marketplace. Track demand patterns (Priority/Empty/Partial stock) to optimize which items to stock. Operate in a competitive, time-sensitive environment where seconds matter.",
+    highlights: [
+      { icon: PackageCheck, label: "Inventory planning", detail: "Analyze restock patterns to prioritize high-demand items" },
+      { icon: ClipboardCheck, label: "Delivery coordination", detail: "Manage trade servers and bot delivery workflows" },
+      { icon: MessageCircle, label: "Seller communication", detail: "Coordinate with buyers/sellers in Discord trade channels" },
+    ],
+    skills: ["Inventory Management", "Market Analysis", "Discord Operations", "Time-Critical Execution"],
+    tools: ["Discord", "Roblox", "Private Trade Servers", "StockMe! Bot"],
+  },
 ];
 
 export default function Experience() {
@@ -38,7 +52,7 @@ export default function Experience() {
     <section id="experience" className="py-section px-4 sm:px-6" aria-labelledby="experience-title">
       <div className="container-narrow">
         <p className="section-label mb-4">work experience</p>
-        <h2 id="experience-title" className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-10">
+        <h2 id="experience-title" className="font-display text-3xl sm:text-4xl lowercase text-ink mb-10">
           experience
         </h2>
 
@@ -51,7 +65,7 @@ export default function Experience() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h3 className="font-pixel text-2xl text-ink">{item.company}</h3>
+                    <h3 className="font-display text-2xl text-ink">{item.company}</h3>
                     <span className="rounded-full border border-gray-300 px-2.5 py-1 text-micro text-gray-500">{item.duration}</span>
                   </div>
                   <p className="text-micro text-gray-500 mt-1">{item.role}</p>

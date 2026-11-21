@@ -55,7 +55,7 @@ export default async function ProjectDetailPage({
         <SectionLabel>project</SectionLabel>
         <h1
           id="project-title"
-          className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-4"
+          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-4"
         >
           {project.title}
         </h1>
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({
 
         <div className="space-y-12">
           <section>
-            <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+            <h2 className="font-display text-xl sm:text-2xl lowercase text-ink mb-4">
               What is this for?
             </h2>
             <p className="text-base-ui text-gray-500 max-w-3xl">
@@ -97,7 +97,7 @@ export default async function ProjectDetailPage({
 
           {project.features.length > 0 && (
             <section>
-              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+              <h2 className="font-display text-xl sm:text-2xl lowercase text-ink mb-4">
                 Features
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-base-ui text-gray-500 max-w-3xl">
@@ -110,7 +110,7 @@ export default async function ProjectDetailPage({
 
           {project.tech.length > 0 && (
             <section>
-              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+              <h2 className="font-display text-xl sm:text-2xl lowercase text-ink mb-4">
                 Tech Stack
               </h2>
               <div className="flex flex-wrap gap-2 max-w-3xl">
@@ -125,7 +125,7 @@ export default async function ProjectDetailPage({
 
           {project.learned && project.learned.length > 0 && (
             <section>
-              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+              <h2 className="font-display text-xl sm:text-2xl lowercase text-ink mb-4">
                 What I Learned
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-base-ui text-gray-500 max-w-3xl">
@@ -138,7 +138,7 @@ export default async function ProjectDetailPage({
 
           {project.uiShots && project.uiShots.length > 0 && (
             <section>
-              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+              <h2 className="font-display text-xl sm:text-2xl lowercase text-ink mb-4">
                 The app
               </h2>
               {/* These are phone screenshots (portrait), so the grid stays
@@ -171,7 +171,7 @@ export default async function ProjectDetailPage({
 
           {project.screenshots.length > 0 && (
             <section>
-              <h2 className="font-pixel text-xl sm:text-2xl lowercase text-ink mb-4">
+              <h2 className="font-display text-xl sm:text-2xl lowercase text-ink mb-4">
                 Behind the build
               </h2>
               <ImageGallery

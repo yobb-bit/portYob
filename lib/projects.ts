@@ -33,6 +33,42 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "discord-claimer",
+    title: "Discord Self-Bot Claimer",
+    tagline: "Event-driven claim bot for StockMe! offers with inventory-aware matching and modal auto-submit.",
+    cover: "/projects/claimer-cover.png",
+    purpose:
+      "Automates claiming limited-stock MM2 item offers from StockMe! bot in Discord. Watches 2 channels, clicks 'Claim Order' buttons within milliseconds, auto-fills 2-digit verification modals, and only claims offers where I have all items in stock (configured quantities). Built to beat competing restockers in a high-contention environment.",
+    features: [
+      "Real-time Discord gateway event handling (on_message, on_message_edit)",
+      "Inventory-aware claiming: force-claim list with per-item quantities (e.g., 'Garama and Madundung:4')",
+      "Per-channel rules: 'ignore unless on force-claim list' toggles",
+      "Dual code-entry modes: AUTO_CODE (full modal submit) + CLIPBOARD_CODES (copy for manual paste)",
+      "Anti-ban: randomized click/code delays, macOS caffeinate to prevent sleep",
+      "Tkinter GUI: tabbed interface (Claim Bot / Live Logs), token show/hide, input validation, persistent .env config",
+      "Graceful STOP/START reload, structured timestamped logging",
+    ],
+    tech: ["Python 3.13", "discord.py-self", "asyncio", "Tkinter", "dotenv"],
+    liveUrl: "",
+    repoUrl: "https://github.com/yobb-bit/discord-claimer",
+    status: "active",
+    screenshots: [
+      { src: "/projects/claimer-gui.png", alt: "Claimer GUI with Claim Bot and Live Logs tabs", caption: "Tkinter GUI — Claim Bot settings and Live Logs", ratio: "wide" },
+      { src: "/projects/claimer-logs.png", alt: "Live logs showing claim, code extraction, modal submit", caption: "Successful claim flow with auto-code submit", ratio: "wide" },
+    ],
+    uiShots: [],
+    learned: [
+      "discord.py-self interaction/modal race conditions — comp.click() waits 12s for interaction_finish; wrapped in asyncio.wait_for(3s) + wait_for('modal') fallback",
+      "Exact-match inventory filtering prevents false positives (e.g., 'Galaxy Garama' ≠ 'Garama and Madundung')",
+      "Per-channel env var keys (IGNORE_UNLESS_INCLUDED_<channel_id>) for dynamic toggle loading",
+      "Embed field parsing: StockMe! puts items in embed fields, not description",
+      "Self-bot token security: .env only, gitignored, never logged",
+    ],
+    award: "Private tool — used daily for BloxSupply restocking operations",
+    teamSize: "Solo",
+    timeline: "Ongoing — iterative improvements over 2+ months",
+  },
+  {
     slug: "pila",
     title: "PILA",
     tagline: "Virtual queuing system for Filipino government offices.",

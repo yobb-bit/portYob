@@ -31,7 +31,7 @@ export default function About() {
 
             <h2
               id="about-title"
-              className="font-pixel text-3xl sm:text-[2.6rem] lowercase text-ink mb-6 leading-tight"
+              className="font-display text-3xl sm:text-[2.6rem] lowercase text-ink mb-6 leading-tight"
             >
               it student.<br />
               support mindset.
@@ -67,7 +67,7 @@ export default function About() {
               ].map(([number, focus]) => (
                 <div key={number} className="bg-bg p-4 sm:p-5">
                   <p className="text-micro text-gray-400 mb-2">{number}</p>
-                  <p className="font-pixel text-lg sm:text-xl text-ink">{focus}</p>
+                  <p className="font-display text-lg sm:text-xl text-ink">{focus}</p>
                 </div>
               ))}
             </div>

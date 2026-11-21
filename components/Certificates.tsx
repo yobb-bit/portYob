@@ -49,7 +49,7 @@ export default function Certificates() {
 
         <h2
           id="certificates-title"
-          className="font-pixel text-3xl sm:text-4xl lowercase text-ink mb-10"
+          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-10"
         >
           learning & achievements
         </h2>
@@ -78,7 +78,7 @@ export default function Certificates() {
                   </div>
                 </div>
                 <div className="lg:col-span-3 flex flex-col justify-center">
-                  <h3 className="font-pixel text-xl text-ink mb-2">
+                  <h3 className="font-display text-xl text-ink mb-2">
                     {cert.title}
                   </h3>
                   <p className="text-base-ui text-gray-500 mb-2">
