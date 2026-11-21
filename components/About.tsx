@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-section px-4 sm:px-6"
+      className="py-section xl:py-20 px-4 sm:px-6 lg:px-0"
       aria-labelledby="about-title"
     >
       <div className="container-narrow">
@@ -31,7 +31,7 @@ export default function About() {
 
             <h2
               id="about-title"
-              className="font-display text-3xl sm:text-[2.6rem] lowercase text-ink mb-6 leading-tight"
+              className="font-display text-3xl sm:text-[2.6rem] xl:text-5xl lowercase text-ink mb-6 leading-tight"
             >
               it student.<br />
               support mindset.

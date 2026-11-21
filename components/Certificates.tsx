@@ -41,7 +41,7 @@ export default function Certificates() {
   return (
     <section
       id="certificates"
-      className="py-section px-4 sm:px-6"
+      className="py-section xl:py-20 px-4 sm:px-6 lg:px-0"
       aria-labelledby="certificates-title"
     >
       <div className="container-narrow">
@@ -49,7 +49,7 @@ export default function Certificates() {
 
         <h2
           id="certificates-title"
-          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-10"
+          className="font-display text-3xl sm:text-4xl xl:text-5xl lowercase text-ink mb-10"
         >
           learning & achievements
         </h2>

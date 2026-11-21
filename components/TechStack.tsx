@@ -35,12 +35,12 @@ const STACK_GROUPS = [
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="py-section px-4 sm:px-6" aria-labelledby="tech-stack-title">
+    <section id="tech-stack" className="py-section xl:py-20 px-4 sm:px-6 lg:px-0" aria-labelledby="tech-stack-title">
       <div className="container-narrow">
         <p className="section-label mb-4">tech stack</p>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <h2 id="tech-stack-title" className="font-display text-3xl sm:text-4xl lowercase text-ink">
+            <h2 id="tech-stack-title" className="font-display text-3xl sm:text-4xl xl:text-5xl lowercase text-ink">
               tools i work with
             </h2>
             <p className="text-base-ui text-gray-500 mt-3">A growing toolkit across software and IT.</p>

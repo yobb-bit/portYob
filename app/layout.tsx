@@ -42,7 +42,7 @@ export default function RootLayout({
       <body className="font-body antialiased" suppressHydrationWarning>
         <ThemeProvider>
           <Header />
-          <main className="lg:pl-[14rem]">{children}</main>
+          <main className="xl:pl-[14rem]">{children}</main>
         </ThemeProvider>
       </body>
     </html>

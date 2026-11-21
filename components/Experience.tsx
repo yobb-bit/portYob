@@ -49,14 +49,14 @@ const EXPERIENCE = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-section px-4 sm:px-6" aria-labelledby="experience-title">
+    <section id="experience" className="py-section xl:py-20 px-4 sm:px-6 lg:px-0" aria-labelledby="experience-title">
       <div className="container-narrow">
         <p className="section-label mb-4">work experience</p>
-        <h2 id="experience-title" className="font-display text-3xl sm:text-4xl lowercase text-ink mb-10">
+        <h2 id="experience-title" className="font-display text-3xl sm:text-4xl xl:text-5xl lowercase text-ink mb-10">
           experience
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {EXPERIENCE.map((item) => (
             <article key={item.company} className="card p-card flex flex-col">
               <div className="flex items-start gap-3 mb-5">

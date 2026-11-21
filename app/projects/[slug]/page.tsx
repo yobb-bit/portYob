@@ -50,12 +50,12 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <section className="py-section px-6 md:px-10 lg:px-16" aria-labelledby="project-title">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-section xl:py-20 px-6 md:px-10 lg:px-12 2xl:px-16" aria-labelledby="project-title">
+      <div className="max-w-7xl mx-auto">
         <SectionLabel>project</SectionLabel>
         <h1
           id="project-title"
-          className="font-display text-3xl sm:text-4xl lowercase text-ink mb-4"
+          className="font-display text-3xl sm:text-4xl xl:text-5xl lowercase text-ink mb-4"
         >
           {project.title}
         </h1>

@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[calc(100vh-4rem)] flex items-center py-20 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center py-20 xl:py-28 px-4 sm:px-6 lg:px-0"
       aria-labelledby="hero-title"
     >
       <div className="container-narrow">
@@ -49,7 +49,7 @@ export default function Hero() {
           {/* Main heading */}
           <h1
             id="hero-title"
-            className="font-display text-display-title text-ink mb-6 animate-entrance entrance-delay-2"
+            className="font-display text-display-title md:text-6xl 2xl:text-7xl text-ink mb-6 animate-entrance entrance-delay-2"
             aria-live="polite"
           >
             Hi, I&apos;m

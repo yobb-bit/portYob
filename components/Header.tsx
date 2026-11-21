@@ -51,7 +51,7 @@ export default function Header() {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-[14rem] lg:z-50 lg:border-r lg:border-gray-300 lg:bg-white lg:shadow-[0_0_0_1px_rgba(0,0,0,0.05)] lg:transition-colors lg:duration-500 dark:lg:bg-gray-950 dark:lg:border-gray-700 dark:lg:shadow-[0_0_0_1px_rgba(255,255,255,0.05)]">
+      <aside className="hidden xl:fixed xl:top-0 xl:left-0 xl:h-screen xl:w-[14rem] xl:z-50 xl:border-r xl:border-gray-300 xl:bg-white xl:shadow-[0_0_0_1px_rgba(0,0,0,0.05)] xl:transition-colors xl:duration-500 dark:xl:bg-gray-950 dark:xl:border-gray-700 dark:xl:shadow-[0_0_0_1px_rgba(255,255,255,0.05)]">
         <nav className="h-full flex flex-col px-6 py-10 lg:py-16 space-y-8">
           {/* Logo */}
           <Link href="/" className="font-display text-ink text-[1.5rem] lowercase select-none hover:opacity-70 transition-opacity">
@@ -88,7 +88,7 @@ export default function Header() {
       </aside>
 
       {/* Mobile top bar */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-sm transition-colors duration-500 dark:bg-gray-950/95 dark:border-gray-700">
+      <header className="xl:hidden fixed top-0 left-0 right-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-sm transition-colors duration-500 dark:bg-gray-950/95 dark:border-gray-700">
         <div className="flex items-center justify-between px-4 py-3">
           <Link href="/" className="font-display text-ink text-[1.25rem] lowercase select-none">
             portyob
