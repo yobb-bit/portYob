@@ -33,7 +33,7 @@ const EXPERIENCE = [
   },
   {
     company: "BloxSupply",
-    logo: "/experience/bloxsupply.png",
+    logo: "/experience/bloxsupply.avif",
     role: "Restocker / Delivery — Murder Mystery 2 items",
     duration: "Current",
     summary: "High-volume inventory restocking and delivery coordination for a Roblox/MM2 marketplace. Track demand patterns (Priority/Empty/Partial stock) to optimize which items to stock. Operate in a competitive, time-sensitive environment where seconds matter.",
